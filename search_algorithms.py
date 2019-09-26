@@ -10,7 +10,7 @@ def linear_search(num, num_list):
             return position, position
     return -1, position
 
-def binary_search_recursive(num, num_list, low=None, high=None, attempts=0):
+def binary_search_recursive(target, num_list, low=None, high=None, attempts=0):
     if low==None:
         low=0
     if high==None:
@@ -18,16 +18,16 @@ def binary_search_recursive(num, num_list, low=None, high=None, attempts=0):
     if high >= low:
         attempts=attempts+1
         mid = int(low + (high - low)/2)
-        if num == num_list[mid]: 
+        if target == num_list[mid]: 
             return mid, attempts
-        elif num < num_list[mid]: 
-            return binary_search_recursive(num, num_list, low, mid-1, attempts) 
+        elif target < num_list[mid]: 
+            return binary_search_recursive(target, num_list, low, mid-1, attempts) 
         else: 
-            return binary_search_recursive(num, num_list, mid+1, high, attempts) 
+            return binary_search_recursive(target, num_list, mid+1, high, attempts) 
     else: 
         return -1, attempts
 
-def binary_search_interative(num, num_list):
+def binary_search_interative(target, num_list):
     low=0
     high=len(num_list)-1
     attempts = 0
@@ -35,9 +35,9 @@ def binary_search_interative(num, num_list):
     while high >= low:
         attempts+=1
         mid = int(low + (high - low)/2)
-        if num == num_list[mid]: 
+        if target == num_list[mid]: 
             return mid, attempts
-        elif num < num_list[mid]: 
+        elif target < num_list[mid]: 
             high = mid-1
         else: 
             low = mid+1 
