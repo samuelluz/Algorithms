@@ -1,9 +1,6 @@
 from matplotlib import pyplot as plt
 def  selectionSort(array):
 
-    def swap(array, first_index, second_index):
-        array[first_index], array[second_index] = array[second_index], array[first_index]
-
     def indexOfMinimum(array, startIndex):
         minIndex = startIndex
         for i, num in enumerate(array[startIndex:], startIndex):
@@ -11,9 +8,9 @@ def  selectionSort(array):
                 minIndex = i
         return minIndex
 
-    for i in range(len(array)):
+    for i,_ in enumerate(array):
         index = indexOfMinimum(array, i)
-        swap(array, i, index)
+        array[i], array[index] = array[index], array[i]
 
 array = [22, 11, 99, 88, 9, 7, 42]
 print(array)
