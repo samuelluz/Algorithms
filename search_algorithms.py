@@ -10,6 +10,7 @@ args = parser.parse_args()
 def linear_search(num, num_list):
     for position, x in enumerate(num_list):
         if x == num:
+            # the number of attempts is equal the position of number.
             return position, position
     return -1, position
 
