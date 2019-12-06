@@ -1,3 +1,6 @@
+"""
+Performance comparison between linear search, interactive binary search and recussive binary search.
+"""
 import time
 import argparse
 parser = argparse.ArgumentParser(description='Search for some integer between -1000 and 1000.')
